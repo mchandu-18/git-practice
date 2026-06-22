@@ -4,12 +4,12 @@ PERSON2=$2
 
 echo "please enter your usernam::"
 
-read - USERNAME  #takes input into username varibale
+read -s USERNAME  #takes input into username varibale
 
 echo "Username entered is :$USERNAME"
 
 echo "please enter you password ::"
 
-read - PASSWORD
+read -s PASSWORD
 
-echo "password entered is : $USERNAME"
+echo "password entered is : $PASSWORD"
