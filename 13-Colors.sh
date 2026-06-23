@@ -1,36 +1,29 @@
 #!/bin/bash
 
 USERID=$(id -u)
-#echo "user ID is: $USERID"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
-VALIDATE(){
-    if [ $1 -ne 0 ]
-    then
-        echo "$2 is ..FAILED"
-        exit 1
-    else
-        echo "$2 is...SUCCESS
-    fi
-}
-
+CHECK_ROOT(){
 if [ $USED -ne 0 ]
 then
     echo "please run this script with root priveleges"
     exit 1
 fi
+}
 
-dnf list installed git 
-
-
+VALIDATE(){
 if [ $? -ne 0 ]
 then
-    echo "Git is not installed, going to install it .."
-    dnf install git -y
-    VALIDATE $? "Installing Git"
+    echo -e "$2is...$R FAILED $N"
+    exit 1
 else
-    echo "Git is already installed, noting to do.."
+    echo -e "$2 is...$G Success $N"
 fi 
+}
 
+CHECK_ROOT
 dnf list installed mysql
 
 if [ $? -ne 0 ]
