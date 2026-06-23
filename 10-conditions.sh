@@ -2,7 +2,7 @@
 
 NUMBER=$1
 
-if [ $Number -gt ] #gt, 1t, eq, -ne, -ge, -le
+if [ $Number -gt 20 ] #gt, 1t, eq, -ne, -ge, -le
 then
     echo "Given number: $NUMBER is greater than 20"
 else
