@@ -22,7 +22,7 @@ then
     else
         echo "Git installation is success"
 
-else  
+else
     echo "Git is already installed, noting to do.."
 fi 
 
